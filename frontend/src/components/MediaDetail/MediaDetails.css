@@ -1,0 +1,15 @@
+img.poster-img {
+  height: 420px;
+  width: 280px;
+}
+
+img.avatar-img {
+  height: 128;
+  width: 128px;
+  margin: auto;
+  border-radius: 200px;
+}
+
+table {
+  cursor: pointer;
+}
