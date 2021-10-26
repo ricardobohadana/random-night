@@ -14,7 +14,8 @@ export interface DetailedData {
   title: string;
   poster: string;
   sinapse: string;
-  stars: string[];
+  rating: string;
+  popularity: string;
   genres: string[];
   types: string[];
   top_cast: {
@@ -31,7 +32,8 @@ const Details = (props: Props) => {
     title: "",
     poster: "",
     sinapse: "",
-    stars: [],
+    popularity: "",
+    rating: "",
     genres: [],
     types: [],
     top_cast: [

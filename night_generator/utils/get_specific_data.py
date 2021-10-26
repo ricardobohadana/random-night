@@ -34,7 +34,7 @@ def getMediaDetails(searchQuery: str) -> dict:
 
   # top_casts = html.find('div', class_='ipc-sub-grid ipc-sub-grid--page-span-2 ipc-sub-grid--wsraps-at-above-l ipc-shoveler__grid')
 
-  default_avatar = 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fstackoverflow.com%2Fquestions%2F47570203%2Fonline-avatar-image-with-viewport&psig=AOvVaw1jeQtL_KR5qE0QTGwI0_K4&ust=1635019946838000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCMiYkpDq3vMCFQAAAAAdAAAAABAD'
+  default_avatar = 'https://www.kindpng.com/picc/m/421-4212275_transparent-default-avatar-png-avatar-img-png-download.png'
 
   top_casts = html.findAll('div', class_='StyledComponents__CastItemWrapper-y9ygcu-7 hTEaNu')
 
@@ -58,10 +58,17 @@ def getMediaDetails(searchQuery: str) -> dict:
 
   title = html.find('h1', class_='TitleHeader__TitleText-sc-1wu6n3d-0 dxSWFG').text
 
+  rating = html.find('span', class_='AggregateRatingButton__RatingScore-sc-1ll29m0-1 iTLWoV').text
+
+  popularity = html.find('div', class_='TrendingButton__TrendingScore-bb3vt8-1 gfstID').text
+
+
   output_dict = { 
     'title': title,
     'poster': poster,
     'sinapse':sinapse,
+    'rating': str(rating),
+    'popularity': str(popularity),
     # 'stars': stars,
     'genres': genres,
     'types': li_types,

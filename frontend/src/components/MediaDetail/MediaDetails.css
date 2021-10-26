@@ -13,3 +13,11 @@ img.avatar-img {
 table {
   cursor: pointer;
 }
+
+.not-white {
+  color: #aaa;
+}
+
+.title-big-font {
+  font-size: 3rem;
+}
