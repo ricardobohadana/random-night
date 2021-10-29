@@ -29,8 +29,15 @@ const BestTable: React.FC<{
       </thead>
       <tbody>
         {data.map((val: TV, key: number) => {
+          let next_location = `/details/${val.Id}`;
           return (
-            <tr key={key} style={{ borderRadius: borderRadius }}>
+            <tr
+              key={key}
+              style={{ borderRadius: borderRadius }}
+              onClick={(e) => {
+                window.location.pathname = next_location;
+              }}
+            >
               <td
                 style={{ borderRadius: borderRadius }}
                 className="d-flex justify-content-center"

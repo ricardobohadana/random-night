@@ -8,7 +8,7 @@ import Home from "./pages/Home";
 import RandomNight from "./pages/RandomNight";
 import AppNavbar from "./components/Navbar";
 
-function App() {
+const App: React.FC = () => {
   return (
     <>
       <BrowserRouter>
@@ -35,6 +35,6 @@ function App() {
       </BrowserRouter>
     </>
   );
-}
+};
 
 export default App;

@@ -3,8 +3,9 @@ import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Spinner } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import MediaDetail from "../components/MediaDetail/MediaDetail";
+import { domain_url } from "../api/url";
 
-interface Props {}
+// interface Props {}
 
 type DetailsParams = {
   slug: string;
@@ -25,7 +26,7 @@ export interface DetailedData {
   }[];
 }
 
-const Details = (props: Props) => {
+const Details: React.FC = () => {
   const { slug } = useParams<DetailsParams>();
 
   const [mediaData, setMediaData] = useState<DetailedData>({
@@ -48,7 +49,7 @@ const Details = (props: Props) => {
   const [hasData, setHasData] = useState<boolean>(false);
 
   useEffect(() => {
-    const url = `http://localhost:8000/api/media/${slug}`;
+    const url = `${domain_url}${slug}`;
     fetch(url)
       .then((r) => r.json())
       .then((data) => {
@@ -58,7 +59,10 @@ const Details = (props: Props) => {
   }, [slug]);
 
   const loadingSpinner = (
-    <div className="d-flex justify-content-center">
+    <div
+      className="d-flex justify-content-center mt-5"
+      style={{ height: "100vh", overflow: "hidden" }}
+    >
       <Spinner animation="border" role="status">
         <span className="visually-hidden">Loading...</span>
       </Spinner>

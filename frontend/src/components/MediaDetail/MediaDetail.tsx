@@ -28,18 +28,18 @@ const MediaDetail: React.FC<Props> = ({ data }) => {
           <div>
             {data.types.map((type, index) => {
               return (
-                <>
+                <span key={index}>
                   <span className="not-white">{type}</span>
                   {len_types !== index ? (
                     <span className="mx-1 not-white">-</span>
                   ) : null}
-                </>
+                </span>
               );
             })}
             <span className="mx-4">
-              {data.genres.map((genre) => {
+              {data.genres.map((genre, key) => {
                 return (
-                  <Badge pill bg="dark" className="not-white mx-1">
+                  <Badge pill bg="dark" key={key} className="not-white mx-1">
                     {genre}
                   </Badge>
                 );
@@ -62,24 +62,30 @@ const MediaDetail: React.FC<Props> = ({ data }) => {
               className="poster-img mx-2"
             />
           </div>
-          <div className="mx-2">
+          <div className="mx-5">
             <h3>Synopsis</h3>
             <p className="not-white">{data.sinapse}</p>
-            <h3 className="">Actors</h3>
-            <div className="d-flex justify-content-between mt-2">
-              {data.top_cast.map((actor) => {
+            <h3 className="mt-2">Actors</h3>
+            <div className="d-flex justify-content-between mt-3">
+              {data.top_cast.map((actor, key) => {
                 return (
-                  <Card style={{ backgroundColor: "#111" }} className="p-3">
+                  <Card
+                    key={key}
+                    style={{ backgroundColor: "#111", width: "10rem" }}
+                    className="py-2"
+                  >
                     <Card.Img
                       variant="top"
                       src={actor.avatar}
                       className="avatar-img"
                     />
                     <Card.Body>
+                      {/* <div className="d-flex justify-content-center"> */}
                       <Card.Title>{actor.name}</Card.Title>
-                      <Card.Text className="not-white">
+                      {/* </div> */}
+                      <Card.Subtitle className="not-white">
                         as {actor.character}
-                      </Card.Text>
+                      </Card.Subtitle>
                       {/* <Button variant="primary">Go somewhere</Button> */}
                     </Card.Body>
                   </Card>

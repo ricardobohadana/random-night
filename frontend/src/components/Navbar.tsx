@@ -1,3 +1,4 @@
+import { withRouter } from "react-router";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {
@@ -45,25 +46,26 @@ const AppNavbar: React.FC = () => {
                 Random Night
               </Link>
             </Button>
-            {/* </Links> */}
           </Nav>
-          <Nav className="m-auto">
-            <Form className="d-flex">
-              <FormControl
-                type="search"
-                placeholder="Type a movie or TV Show"
-                className="m-1"
-                aria-label="Search"
-              />
-              <Button variant="outline-success" className="m-1">
-                Search
-              </Button>
-            </Form>
-          </Nav>
+          {window.location.pathname === "/" ? (
+            <Nav className="m-auto">
+              <Form className="d-flex">
+                <FormControl
+                  type="search"
+                  placeholder="Type a movie or TV Show"
+                  className="m-1"
+                  aria-label="Search"
+                />
+                <Button variant="outline-success" className="m-1">
+                  Search
+                </Button>
+              </Form>
+            </Nav>
+          ) : null}
         </Navbar.Collapse>
       </Container>
     </Navbar>
   );
 };
 
-export default AppNavbar;
+export default withRouter(AppNavbar);

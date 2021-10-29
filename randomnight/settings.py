@@ -25,7 +25,12 @@ SECRET_KEY = 'aj@g7u3k9&ivb@68q@6+*pihs0db__1u$=urn1&^$yiwzisi%t'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    'https://cacolorde.pythonanywhere.com/',
+    'http://cacolorde.pythonanywhere.com/',
+    'cacolorde.pythonanywhere.com/',
+
+]
 
 
 # Application definition
@@ -133,7 +138,8 @@ STATICFILES_DIRS = [
 # }
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:8000",
-    "http://localhost:3000",
-    "http://127.0.0.1:8000",
+    "http://cacolorde.pythonanywhere.com/"
+    "https://cacolorde.pythonanywhere.com/"
+    "cacolorde.pythonanywhere.com/"
 ]
+
