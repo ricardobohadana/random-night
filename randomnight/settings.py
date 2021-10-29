@@ -28,7 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'https://cacolorde.pythonanywhere.com/',
     'http://cacolorde.pythonanywhere.com/',
-    'cacolorde.pythonanywhere.com/',
+    'cacolorde.pythonanywhere.com',
 
 ]
 
@@ -138,8 +138,8 @@ STATICFILES_DIRS = [
 # }
 
 CORS_ALLOWED_ORIGINS = [
-    "http://cacolorde.pythonanywhere.com/"
-    "https://cacolorde.pythonanywhere.com/"
-    "cacolorde.pythonanywhere.com/"
+    "http://cacolorde.pythonanywhere.com"
+    "https://cacolorde.pythonanywhere.com"
+    "cacolorde.pythonanywhere.com"
 ]
 
